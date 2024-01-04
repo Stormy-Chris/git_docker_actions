@@ -10,7 +10,7 @@ import os
 import sys
 from typing import List
 
-from actions import io
+#from actions import io
 
 
 def main(args: List[str]) -> None:
@@ -21,11 +21,11 @@ def main(args: List[str]) -> None:
     """
 
     # reading the name variable from `with`
-    name = os.environ["INPUT_NAME"]
+    #name = os.environ["INPUT_NAME"]
 
     # writing to the buffer
-    io.write_to_output({"phrase": f"Hello {name}"})
-    print('Hello' + name)
+    #io.write_to_output({"phrase": f"Hello {name}"})
+    print('Hello World ') # + name)
     # now, people can echo `phrase`
 
 
