@@ -1,12 +1,37 @@
-on: [push]
+# .github/workflows/main.yml
+name: Testing My hello-world Action
+
+on: workflow_dispatch
 
 jobs:
   build:
-  name: Hello world
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v2
-  - name: Write a multi-line message
-    run: |
-      echo This demo file shows a 
-      echo very basic and easy-to-understand workflow.
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - id: greetings
+        name: Using hello-world
+        # use the action that's inside the same repository
+        uses: ./
+        with:
+          name: Sadra
+
+      - name: Echo phrase
+        run: |
+          echo ${{ steps.greetings.outputs.phrase }}
+
+
+# on: [push]
+
+# jobs:
+#   build:
+#   name: Hello world
+#   runs-on: ubuntu-latest
+#   steps:
+#   - uses: actions/checkout@v2
+#   - name: Write a multi-line message
+#     run: |
+#       echo This demo file shows a 
+#       echo very basic and easy-to-understand workflow.
