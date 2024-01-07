@@ -23,10 +23,8 @@ def main(): #args: List[str]) -> None:
     # reading the name variable from `with`
     name = os.environ.get("INPUT_NAME")
 
-    # writing to the buffer
-    #io.write_to_output({"phrase": f"Hello {name}"})
     print('Hello World ' + name)
-    # now, people can echo `phrase`
+    
 
 
 if __name__ == "__main__":
